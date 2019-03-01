@@ -13,6 +13,7 @@ A scaled down version of self-driving system using a RC car, Raspberry Pi, Ardui
   &emsp;&emsp;&emsp; PiCamera  
   
   2. Computer:  
+  &emsp;&emsp;&emsp; Python
   &emsp;&emsp;&emsp; Numpy  
   &emsp;&emsp;&emsp; OpenCV  
   &emsp;&emsp;&emsp; Pygame  
