@@ -4,28 +4,28 @@
 See self-driving in action  
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=BBwEF6WBUQs
-" target="_blank"><img src="http://img.youtube.com/vi/BBwEF6WBUQs/0.jpg" width="360" height="240" border="10" /></a>
+" target="_blank">Self Driving in Action (Youtube)</a>
 
-This project builds a self-driving RC car using Raspberry Pi, Arduino and open source software. Raspberry Pi collects inputs from a camera module and an ultrasonic sensor, and sends data to a computer wirelessly. The computer processes input images and sensor data for object detection (stop sign and traffic light) and collision avoidance respectively. A neural network model runs on computer and makes predictions for steering based on input images. Predictions are then sent to the Arduino for RC car control. 
+A scaled down version of self-driving system using a RC car, Raspberry Pi, Arduino and open source software. The system uses a Raspberry Pi with a camera and an ultrasonic sensor as inputs, a processing computer that handles steering, object recognition (stop sign and traffic light) and distance measurement, and an Arduino board for RC car control. 
   
-### Setting up environment with Anaconda
-  1. Install [`miniconda(Python3)`](https://conda.io/miniconda.html) on your computer
-  2. Create `auto-rccar` environment with all necessary libraries for this project  
-     ```conda env create -f environment.yml```
+### Dependencies
+  1. Raspberry Pi:  
+  &emsp;&emsp;&emsp; PiCamera  
+  
+  2. Computer:  
+  &emsp;&emsp;&emsp; Numpy  
+  &emsp;&emsp;&emsp; OpenCV  
+  &emsp;&emsp;&emsp; Pygame  
+  &emsp;&emsp;&emsp; PiSerial  
+  &emsp;&emsp;&emsp; Scikit-learn  
      
-  3. Activate `auto-rccar` environment  
-     ```source activate auto-rccar```
-  
-  &ensp; To exit, simply close the terminal window. More info about managing Anaconda environment, please see [here](https://conda.io/docs/user-guide/tasks/manage-environments.html).
   
 ### About the files
 **test/**  
   &emsp; &emsp; `rc_control_test.py`: RC car control with keyboard  
   &emsp; &emsp;  `stream_server_test.py`: video streaming from Pi to computer  
   &emsp; &emsp;  `ultrasonic_server_test.py`: sensor data streaming from Pi to computer  
-  &emsp; &emsp;  **model_train_test/**  
-      &emsp; &emsp;  &emsp; &emsp; `data_test.npz`: sample data  
-      &emsp; &emsp;  &emsp; &emsp; `train_predict_test.ipynb`: a jupyter notebook that goes through neural network model in OpenCV3  
+  
   
 **raspberryPi/**    
   &emsp; &emsp;  `stream_client.py`:        stream video frames in jpeg format to the host computer  
@@ -63,5 +63,3 @@ This project builds a self-driving RC car using Raspberry Pi, Arduino and open s
 5. **Cascade classifiers training (optional):** Trained stop sign and traffic light classifiers are included in the **`cascade_xml`** folder, if you are interested in training your own classifiers, please refer to [OpenCV doc](http://docs.opencv.org/doc/user_guide/ug_traincascade.html) and this great [tutorial](http://coding-robin.de/2013/07/22/train-your-own-opencv-haar-classifier.html).
 
 6. **Self-driving in action**: First run `rc_driver.py` to start the server on the computer, and then run `stream_client.py` and `ultrasonic_client.py` on raspberry pi. 
-
-[中文文档](https://github.com/zhaoying9105/AutoRCCar) (感谢[zhaoying9105](https://github.com/zhaoying9105))
