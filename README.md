@@ -1,6 +1,8 @@
 ## AutoRCCar
 ### Python3 + OpenCV3
 
+![alt text](https://github.com/arkaprovaz/AutoRCCar/blob/master/Media/RC%20Car.JPG)
+
   
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=BBwEF6WBUQs
